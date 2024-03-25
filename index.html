@@ -4,24 +4,40 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/styles.css" />
     <title>Shecodes Weather App</title>
   </head>
   <body>
-    <form action="">
-      <input type="text" name="" id="" placeholder="Enter a city" />
-      <input type="button" value="Search" />
-    </form>
-    <h1>Paris</h1>
-    <p>Saturday 15:32, moderate rain</p>
-    <p>Humidity: <strong>87% </strong>, Wind: <strong>7.2 km/h</strong></p>
-    <p>☀️ 14°C</p>
-    <ul>
-      <li>Sun 🌤️ <br />14°C - 18°C</li>
-      <li>Mon 🌤️ <br />14°C - 18°C</li>
-      <li>Tue 🌤️ <br />14°C - 18°C</li>
-      <li>Wed 🌤️ <br />14°C - 18°C</li>
-      <li>Thu 🌤️ <br />14°C - 18°C</li>
-    </ul>
+    <div class="weather-app">
+      <header>
+        <form id="search-form">
+          <input
+            type="search"
+            placeholder="Enter a city.."
+            required
+            class="search-input"
+            id="search-input"
+          />
+          <input type="submit" value="Search" class="search-button" />
+        </form>
+      </header>
+      <main>
+        <div class="current-weather">
+          <div>
+            <h1 class="current-city" id="current-city">Paris</h1>
+            <p class="current-details">
+              <span id="current-date"></span>, moderate rain <br />
+              Humidity: <strong>87%</strong>, Wind: <strong>7.2km/h</strong>
+            </p>
+          </div>
+          <div class="current-temperature">
+            <span class="current-temperature-icon">☀️</span
+            ><span class="current-temperature-value" id="current-temperature"
+              >24</span
+            ><span class="current-temperature-unit">°C</span>
+          </div>
+        </div>
+      </main>
     <footer>
       <p>
         This project was coded by
