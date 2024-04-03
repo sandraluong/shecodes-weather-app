@@ -29,6 +29,31 @@ function search(event) {
   axios.get(apiUrl).then(displayTemperature);
 }
 
+function displayForecast() {
+  let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
+  let forecastHtml = "";
+
+  days.forEach(function (day) {
+    forecastHtml =
+      forecastHtml +
+      `
+           <div class="weather-forecast-day">
+              <div class="weather-forecast-date">${day}</div>
+              <div class="weather-forecast-icon">🌤️</div>
+              <div class="weather-forecast-temperatures">
+                <span class="weather-forecast-temperature">
+                  <strong>18°</strong>
+                </span>
+                <span class="weather-forecast-temperature">12°</span>
+              </div>
+          </div>
+          `;
+  });
+
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = forecastHtml;
+}
+
 function formatDate(date) {
   let minutes = date.getMinutes();
   let hours = date.getHours();
@@ -63,3 +88,4 @@ let currentDateELement = document.querySelector("#current-date");
 let currentDate = new Date();
 
 currentDateELement.innerHTML = formatDate(currentDate);
+displayForecast();
